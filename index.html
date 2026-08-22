@@ -44,7 +44,11 @@ section{content-visibility:auto;contain-intrinsic-size:1px 1400px}
    on it at all — the opposite of what the page is for. Two up, tighter header,
    labels always shown, so the ads are visible before anything is scrolled. */
 @media(max-width:760px){
-  .trow{flex-wrap:wrap;gap:8px}
+  /* align-items defaults to stretch, so in a two-up row the shorter tile is
+     pulled to the taller one's height and object-fit:cover slices the sides off
+     its artwork — it took the "C" off Jubel's headline. Each tile keeps its own
+     aspect ratio instead; ragged bottoms are the correct trade. */
+  .trow{flex-wrap:wrap;gap:8px;align-items:flex-start}
   .trow .tile{flex:1 1 calc(50% - 4px) !important}
   .tiles{gap:8px}
   .tile:after{opacity:.92;height:32%}
