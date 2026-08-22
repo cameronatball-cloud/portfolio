@@ -47,8 +47,13 @@ section{content-visibility:auto;contain-intrinsic-size:1px 1400px}
   .trow{flex-wrap:wrap;gap:8px}
   .trow .tile{flex:1 1 calc(50% - 4px) !important}
   .tiles{gap:8px}
-  .tile .lab{transform:none;opacity:1}
-  .tile:after{opacity:.9}
+  .tile .lab{transform:none;opacity:1;left:10px;right:10px;bottom:9px}
+  /* At half a phone's width the category line wraps to three lines and lands on
+     top of the ad's own headline. The brand name alone is enough — the category
+     is written under every project further down the page anyway. */
+  .tile .lab i{display:none}
+  .tile .lab b{font-size:13px;letter-spacing:.02em}
+  .tile:after{opacity:.92;height:32%}
 }
 .tile{position:relative;overflow:hidden;border:0;padding:0;cursor:pointer;
   border-radius:4px;display:block;color:inherit;text-align:left;margin:0;
